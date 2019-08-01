@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    bootstrap-servers: 172.30.11.17:9097
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 65536
+      buffer-memory: 524288
+    consumer:
+      group-id: default-group   #默认组id  后面会配置多个消费者组
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: latest
+      enable-auto-commit: false   #关闭自动提交 改由spring-kafka提交
+      auto-commit-interval: 100
+      max-poll-records: 20      #批量消费 一次接收的最大数量
+
