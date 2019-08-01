@@ -27,8 +27,8 @@ public class Consumer {
 
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();
-            log.info("----------------- record =" + record);
-            log.info("----------------- message =" + message);
+            log.info("----------------- key =" + record.key());
+            log.info("----------------- value =" + message);
         }
     }
 
