@@ -38,7 +38,7 @@ public class Consumer {
         }
 
 //        if (count % 5 == 0) {
-            //ack.acknowledge();
+            ack.acknowledge();
 //        }
 //        count++;
     }
