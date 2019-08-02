@@ -20,14 +20,14 @@ public class Producer {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
+    private int count = 0;
     /**
      * 定时任务
      */
-    @Scheduled(cron = "0/10 * * * * ?")
+    //@Scheduled(cron = "0/10 * * * * ?")
     public void send() {
-        String message = UUID.randomUUID().toString();
+        String message = count + "";
         ListenableFuture future = kafkaTemplate.send("test", "kafka", message);
-        future.addCallback(o -> System.out.println("send-消息发送成功：" + message),
-                throwable -> System.out.println("消息发送失败：" + message));
+        count++;
     }
 }

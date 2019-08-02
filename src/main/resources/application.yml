@@ -15,3 +15,4 @@ spring:
       auto-commit-interval: 100
       max-poll-records: 20      #批量消费 一次接收的最大数量
 
+
