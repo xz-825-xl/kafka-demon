@@ -26,7 +26,7 @@ public class Consumer {
      *
      * @param record
      */
-    @KafkaListener(topics = {TOPIC}, containerFactory = "batchFactory")
+    @KafkaListener(topics = {TOPIC})
     public void listen(ConsumerRecord<?, ?> record, Acknowledgment ack) {
 
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
@@ -38,7 +38,7 @@ public class Consumer {
         }
 
 //        if (count % 5 == 0) {
-            ack.acknowledge();
+            //ack.acknowledge();
 //        }
 //        count++;
     }
