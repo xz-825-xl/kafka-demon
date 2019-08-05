@@ -26,7 +26,7 @@ public class Consumer {
      *
      * @param record
      */
-    @KafkaListener(topics = {TOPIC})
+    //@KafkaListener(topics = {TOPIC})
     public void listen(ConsumerRecord<?, ?> record, Acknowledgment ack) {
 
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
