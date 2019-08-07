@@ -19,6 +19,6 @@ public class KafkaTestController {
 
     @GetMapping("/send")
     public void send(String key, String value) {
-        kafkaTemplate.send("test", key, value);
+        kafkaTemplate.send("nuonuo-dz-customer", key, value);
     }
 }

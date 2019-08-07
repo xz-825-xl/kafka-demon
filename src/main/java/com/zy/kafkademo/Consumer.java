@@ -18,7 +18,7 @@ import java.util.Optional;
 @EnableKafka
 public class Consumer {
 
-    private static final String TOPIC = "test";
+    private static final String TOPIC = "nuonuo-dz-customer";
     private int count = 0;
 
     /**
@@ -43,7 +43,7 @@ public class Consumer {
 //        count++;
     }
 
-    @KafkaListener(topics = {TOPIC}, containerFactory = "batchFactory")
+    //@KafkaListener(topics = {TOPIC}, containerFactory = "batchFactory")
     public void listen2(ConsumerRecord<?, ?> record, Acknowledgment ack) {
 
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
